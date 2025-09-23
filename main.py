@@ -1,3 +1,5 @@
+import random
+
 
 def binario_a_decimal(): ## funcion de binario a decimal
     binario = input("Ingrese un numero binario (Solo 0 y 1): \n")
@@ -21,6 +23,37 @@ def binario_a_decimal(): ## funcion de binario a decimal
     print(f"\nBinario: {binario}  ---> Decimal: {decimal}\n" )
     input("Presiona enter para volver.\n")
 
+def juego_adivinanza():
+
+    print("\n=== Juego de adivinanza binaria ===\n")
+
+    numero = random.randint(0,15)   ## el numero aleatorio
+    binario = bin(numero)[2:].zfill(4) # lo muestro en binario con 4 bits
+    print(f"Adivina el numero decimal de este binario: {binario}")
+
+    intento = input("Tu respuesta: ")
+
+    #validacion 
+
+    if not intento.isdigit():
+        print("Error: debes ingresar un numero entero")
+        input("Presiona enter para volver.")
+        return
+    #respuesta
+    if int(intento) == numero:
+        print("Correcto! Acertaste el numero.")
+    else:
+        print(f"Incorrecto, el numero era: {numero}")
+
+    input("Presiona enter para volver \n")
+
+
+
+
+
+
+
+
 ##MENU
 
 while True:
@@ -32,5 +65,5 @@ while True:
     print("5 - Salir\n")
     opcion = input("Seleccione una opcion (1-5): \n")
 
-    if opcion == "3":
-        binario_a_decimal()
+    if opcion == "4":
+        juego_adivinanza()
