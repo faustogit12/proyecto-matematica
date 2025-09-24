@@ -93,9 +93,6 @@ def juego_adivinanza():
 
 
 
-
-
-
 ##MENU
 
 while True:
