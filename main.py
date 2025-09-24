@@ -22,6 +22,27 @@ def contador_binario():
         print(f"{i} en binario es {binario}")
         i += 1
 
+def decimal_a_binario():
+    # Pedimos el número decimal
+    decimal = int(input("Ingresa un número decimal: "))
+
+    # Inicializamos variables
+    binario = ""
+    n = decimal
+
+    # Condicional y repetitiva
+    if n == 0:
+        binario = "0"
+    else:
+        while n > 0:
+            binario = str(n % 2) + binario
+            n = n // 2
+
+    # Secuencial: mostrar resultado
+    print(f"{decimal} en binario es {binario}") 
+
+
+
 def binario_a_decimal(): ## funcion de binario a decimal
     binario = input("Ingrese un numero binario (Solo 0 y 1): \n")
 
@@ -86,5 +107,16 @@ while True:
     print("5 - Salir\n")
     opcion = input("Seleccione una opcion (1-5): \n")
 
-    if opcion == "4":
+    if opcion == "1":
+        contador_binario()
+    elif opcion == "2":
+        decimal_a_binario()
+    elif opcion == "3":
+        binario_a_decimal()
+    elif opcion == "4":
         juego_adivinanza()
+    elif opcion == "5":
+        print("Gracias por usar, hasta luego")
+        break
+    else:
+        print("Opcion incorrecta.")
